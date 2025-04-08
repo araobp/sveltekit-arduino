@@ -1,4 +1,4 @@
-# sveltekit-arduino
+# SvelteKit and Arduino
 
 
 ```
