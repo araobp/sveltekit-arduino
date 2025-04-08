@@ -13,4 +13,3 @@
 ## References
 
 - [Arduino IDE](https://www.arduino.cc/en/software)
-- [Johnny Five](https://johnny-five.io/)
