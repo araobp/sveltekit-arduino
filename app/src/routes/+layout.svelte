@@ -14,7 +14,7 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/image_recognition"
+                    <a class="nav-link" href="/led/blink"
                         >LED Blink</a
                     >
                 </li>
@@ -23,6 +23,6 @@
     </div>
 </nav>
 
-<div class="container mb-3">
+<div class="container mt-3">
     {@render children()}
 </div>
