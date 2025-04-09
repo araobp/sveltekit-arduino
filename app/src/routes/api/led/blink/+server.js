@@ -24,7 +24,6 @@ const write = async (port, cmd) => {
 }
 
 export async function POST({ url }) {
-    console.log(url);
     const switch_ = url.searchParams.get('switch');
     var cmd;
     if (switch_ == "on") {
@@ -38,5 +37,3 @@ export async function POST({ url }) {
     await write(port, cmd);
     return new Response(JSON.stringify({ message: "Message written" }), { status: 200 });
 }
-
-await write(port, OFF); // Initialize the LED to OFF state 

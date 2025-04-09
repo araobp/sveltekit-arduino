@@ -1,12 +1,27 @@
 <script>
+    import { onMount } from "svelte";
+
     var s_LedState = $state(false);
 
-    $effect(() => {
+
+    const ledBlink = async () => {
         const switchState = s_LedState ? "on" : "off";
         // Send the LED state to the server
-        fetch(`/api/led/blink?switch=${switchState}`, {
+        const response = await fetch(`/api/led/blink?switch=${switchState}`, {
             method: "POST",
         });
+        const data = await response.json();
+        console.log("LED state changed:", data);
+        return;
+    }
+
+    $effect(async () => {
+        s_LedState;
+        await ledBlink();
+    });
+
+    onMount(async() => {
+        await ledBlink();
     });
 </script>
 
