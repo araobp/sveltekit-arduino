@@ -1,6 +1,6 @@
 import { SerialPort } from 'serialport';
 
-const PORT = "/dev/cu.usbmodem101";  // Arduino UNO port in case of My MacBookAir
+const PORT = "/dev/cu.usbmodem1101";  // Arduino UNO port in case of My MacBookAir
 const BAUD_RATE = 9600;
 const [ON, OFF] = ['1', '0'];
 
@@ -37,3 +37,7 @@ export async function POST({ url }) {
     await write(port, cmd);
     return new Response(JSON.stringify({ message: "Message written" }), { status: 200 });
 }
+
+setTimeout(() => {
+    write(port, OFF);
+}, 3000);
